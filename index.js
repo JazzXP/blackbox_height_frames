@@ -2,6 +2,9 @@ const { createCanvas } =require('canvas');
 const fs = require('fs');
 const csv = require('csv-parser');
 
+const width = 256;
+const height = 64;
+
 function round(value, precision) {
     var multiplier = Math.pow(10, precision || 0);
     return Math.round(value * multiplier) / multiplier;
@@ -19,8 +22,6 @@ function main(args) {
         console.error('Please supply the input filename');
         return;
     }
-    const width = 256;
-    const height = 64;
     
     const canvas = createCanvas(width, height);
     const context = canvas.getContext('2d');
