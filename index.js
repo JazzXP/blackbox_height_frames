@@ -39,8 +39,8 @@ function main(args) {
     .on("data", (data) => {
       currentTotal += parseInt(data.BaroAlt, 10);
       currentPos++;
-      if (currentPos >= 40) {
-        text = `${(round(currentTotal, 1) / 1000.0).toFixed(1)}m`;
+      if (currentPos >= 80) {
+        text = `${(round(currentTotal / currentPos, 1) / 100.0).toFixed(1)}m`;
         context.fillText(text, width, height - 8);
 
         const buffer = canvas.toBuffer("image/png");
@@ -54,3 +54,7 @@ function main(args) {
 }
 
 main(process.argv.slice(2));
+console.out("A good command to run is:-");
+console.out(
+  `ffmpeg -framerate 25 -pattern_type glob -i 'out/*.png' -c:v libx264 -r 25 -pix_fmt yuv420p out1.mp4`
+);
