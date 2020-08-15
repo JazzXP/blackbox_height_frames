@@ -1,0 +1,15 @@
+{
+  "name": "blackbox_height_frames",
+  "version": "0.0.1",
+  "description": "Converts a Betaflight Blackbox CSV export to a set of frames containing barometer data suitable to convert to video",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "canvas": "^2.6.1",
+    "csv-parser": "^2.3.3"
+  }
+}
