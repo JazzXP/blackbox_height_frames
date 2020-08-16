@@ -2,3 +2,4 @@ out/*
 *.csv
 node_modules
 *.bfl
+*.mp4
